@@ -1,4 +1,5 @@
-                        <html>
+        <!DOCTYPE html>
+        <html>
         <head>
                 <title>Search Bar</title>
                 <script src="https://kit.fontawesome.com/f9e9bca382.js" crossorigin="anonymous"></script>
