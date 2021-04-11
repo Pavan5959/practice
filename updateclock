@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Real Time clock</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+        <script>
+            function realTimeClock()
+            {
+                var rtc=new Date();
+                var hours=rtc.getHours();
+                var minutes=rtc.getMinutes();
+                var seconds=rtc.getSeconds();
+
+                var ampm=(hours<12)?"AM": "PM";
+                hours=(hours>12)?hours-12:hours;
+
+                hours=("0" + hours).slice(-2);
+                minutes=("0" + minutes).slice(-2);
+                seconds=("0" + seconds).slice(-2);
+            
+
+                document.getElementById("clock").innerHTML= hours+ ":"+ minutes+ ":"+ seconds+ ":"+ampm;
+                var t=setTimeout(realTimeClock,500);  
+            }     
+        </script>
+        <style>
+            html, body{
+                margin: 0;
+                width: 100%;
+
+            }
+            .main-container{
+                width:100%;
+                height:1080px;
+                position: relative;
+            }
+            .img-background{
+                width: 100%;
+                height: auto;
+            }
+            h1{
+                width: 100%;
+                margin-top:15%;
+                position: absolute;
+                font-size: 8vw;
+                font-weight: bold;
+                text-align: center;
+                color: rgb(255, 153, 0);
+                font-family: 'oswald',sans-serif;
+                letter-spacing: 5px;
+
+            }
+            #clock{
+                width: 100%;
+                position: absolute;
+                font-size: 9vw;
+                color:rgb(245, 143, 10);
+                text-align: center;
+                font-family: 'roboto',sans-serif;
+                margin-top: 25%;
+            }
+
+        </style>
+    </head>
+    <body onload="realTimeClock()">
+        <div class="main-container">
+            <h1><i>Nature with Beauty </i></h1>
+            <div id="clock"></div>
+                <img class="img-background" src="nature2.jpg">
+
+            
+
+        </div>
+
+    </body>
+</html>
